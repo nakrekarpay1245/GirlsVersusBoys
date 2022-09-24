@@ -5,20 +5,32 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject hitBox;
+    private AttackBox attackBox;
 
     [SerializeField]
     private GameObject swordTrail;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private List<AudioClip> audioClipList;
+    private void Awake()
+    {
+        audioSource = GetComponentInChildren<AudioSource>();
+    }
+
     public void ActivateHitBox()
     {
-        hitBox.SetActive(true);
+        attackBox.gameObject.SetActive(true);
         swordTrail.SetActive(true);
+        audioSource.pitch = Random.Range(0.8f, 1.2f);
+        audioSource.clip = audioClipList[Random.Range(0, audioClipList.Count)];
+        audioSource.Play();
     }
 
     public void DeactivateHitBox()
     {
-        hitBox.SetActive(false);
+        attackBox.gameObject.SetActive(false);
         swordTrail.SetActive(false);
     }
 }

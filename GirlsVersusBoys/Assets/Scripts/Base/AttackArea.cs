@@ -18,8 +18,9 @@ public class AttackArea : MonoBehaviour
     {
         if (other.gameObject.CompareTag(oppositeTag))
         {
-            Debug.Log("Opposite");
+            // Debug.Log("Opposite Enter: " + oppositeTag);
             unit.ChangeState(UnitState.Attack);
+            unit.AddOppositeUnit(other.gameObject.GetComponent<Unit>());
         }
     }
 }

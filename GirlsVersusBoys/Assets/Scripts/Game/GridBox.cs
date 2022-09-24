@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class GridBox : MonoBehaviour
 {
-    public bool isOccupied;
+    public bool isDeployed;
+    public bool isDeploying;
 
-    public Color greenColor;
-    public Color redColor;
+    public Color deployingColor;
+    public Color unDeployedColor;
+    public Color deployedColor;
 
-    public MeshRenderer meshRenderer;
+    public SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    private void Update()
+    public void Deploying()
     {
-        if (isOccupied)
+        if (!isDeployed)
         {
-            meshRenderer.material.color = redColor;
+            spriteRenderer.color = deployingColor;
+            isDeploying = true;
         }
+    }
 
-        else
-        {
-            meshRenderer.material.color = greenColor;
-        }
+    public void Deployed()
+    {
+        spriteRenderer.color = deployedColor;
+        isDeployed = true;
+        isDeploying = false;
+    }
+
+    public void UnDeployed()
+    {
+        isDeployed = false;
+        isDeploying = false;
+        spriteRenderer.color = unDeployedColor;
     }
 }

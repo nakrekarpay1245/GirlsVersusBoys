@@ -358,12 +358,23 @@
 "Assets/Scripts/Base/AttackManager.cs"
 "Assets/Scripts/Base/Commander.cs"
 "Assets/Scripts/Base/Enemy.cs"
+"Assets/Scripts/Base/MeleeEnemy.cs"
+"Assets/Scripts/Base/MeleeSoldier.cs"
+"Assets/Scripts/Base/ProducerSoldier.cs"
+"Assets/Scripts/Base/Projectile.cs"
 "Assets/Scripts/Base/Soldier.cs"
 "Assets/Scripts/Base/Unit.cs"
 "Assets/Scripts/Base/UnitState.cs"
+"Assets/Scripts/CameraMovement.cs"
+"Assets/Scripts/Game/EnemyBase.cs"
+"Assets/Scripts/Game/GetHitParticle.cs"
 "Assets/Scripts/Game/GridBox.cs"
 "Assets/Scripts/Game/Manager.cs"
 "Assets/Scripts/Game/PlayerBase.cs"
+"Assets/Scripts/LocalCanvas.cs"
+"Assets/Scripts/ShootManager.cs"
+"Assets/Scripts/ThrowerEnemy.cs"
+"Assets/Scripts/ThrowerSoldier.cs"
 -langversion:9.0
 
 /deterministic

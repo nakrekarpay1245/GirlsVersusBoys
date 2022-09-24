@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Soldier : MonoBehaviour
+public class Soldier : Unit
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("ECONOMY")]
+    public float price;
 
-    // Update is called once per frame
-    void Update()
+    [HideInInspector]
+    public GridBox gridBox;
+    public virtual void Deploye()
     {
-        
+
+    }
+    public virtual void NotDeployed()
+    {
+
+    }
+    public void SetGridBox(GridBox _gridBox)
+    {
+        gridBox = _gridBox;
     }
 }
