@@ -18,25 +18,20 @@ public class MeleeSoldier : Soldier
     [Header("ATTACK")]
     [SerializeField]
     private float attackTime;
-    [SerializeField]
     private float nextAttackTime;
 
     [SerializeField]
     private string attackAnim;
 
-    [SerializeField]
     private AttackArea attackArea;
 
-    [SerializeField]
-    private List<Unit> oppositeUnitsInAttackArea;
+    public List<Unit> oppositeUnitsInAttackArea;
 
-    [SerializeField]
     private Animator animator;
 
-    [SerializeField]
     private Collider collider;
 
-    private void Awake()
+    private void Start()
     {
         animator = GetComponentInChildren<Animator>();
         collider = GetComponentInChildren<Collider>();
@@ -172,17 +167,10 @@ public class MeleeSoldier : Soldier
             // Debug.Log("Some enemy hit me");
             DecreaseHealth();
         }
-
-        if (other.gameObject.CompareTag("Projectile"))
+        if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            Projectile projectile = other.GetComponent<Projectile>();
-
-            if (projectile.isEnemy)
-            {
-                // Debug.Log("Some enemy throw a projectile to me");
-                DecreaseHealth();
-                Destroy(projectile.gameObject);
-            }
+            // Debug.Log("Some enemy throw a projectile to me");
+            DecreaseHealth();
         }
     }
 }

@@ -13,7 +13,6 @@ public class ShootManager : MonoBehaviour
     [SerializeField]
     private ParticleSystem muzzleFlash;
 
-    [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
     private List<AudioClip> audioClipList;

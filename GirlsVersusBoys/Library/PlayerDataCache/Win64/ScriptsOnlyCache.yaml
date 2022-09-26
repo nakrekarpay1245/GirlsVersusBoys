@@ -4,15 +4,22 @@ ScriptsOnlyBuild:
     - AttackArea
     - AttackBox
     - AttackManager
+    - BarricadeSoldier
+    - CameraMovement
     - Commander
     - EnemyBase
     - GetHitParticle
     - GridBox
+    - LocalCanvas
     - Manager
     - MeleeEnemy
     - MeleeSoldier
     - PlayerBase
     - ProducerSoldier
+    - Projectile
+    - ShootManager
+    - ThrowerEnemy
+    - ThrowerSoldier
     DOTweenUpgradeManager.dll:
     - DG.DOTweenUpgradeManager.UpgradeWindow
     Unity.Rider.Editor.dll:
@@ -89,6 +96,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Commander
     methodName: SetDeployingSoldier
+  - assembly: Assembly-CSharp
+    fullTypeName: Commander
+    methodName: SetDeployingSoldier
+  - assembly: Assembly-CSharp
+    fullTypeName: Commander
+    methodName: SetDeployingSoldier
   sceneClasses:
     Assets/Scenes/GameScene.unity:
     - Class: 1
@@ -142,54 +155,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1556}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1558}
     - Class: 114
       Script: {instanceID: 1690}
     - Class: 114
-      Script: {instanceID: 2228}
+      Script: {instanceID: 2112}
     - Class: 114
-      Script: {instanceID: 2284}
+      Script: {instanceID: 2230}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2286}
     - Class: 114
-      Script: {instanceID: 3002}
+      Script: {instanceID: 2308}
     - Class: 114
-      Script: {instanceID: 3196}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 3592}
+      Script: {instanceID: 3004}
     - Class: 114
-      Script: {instanceID: 3800}
+      Script: {instanceID: 3198}
     - Class: 114
-      Script: {instanceID: 4282}
+      Script: {instanceID: 3594}
     - Class: 114
-      Script: {instanceID: 4478}
+      Script: {instanceID: 3652}
     - Class: 114
-      Script: {instanceID: 4554}
+      Script: {instanceID: 3804}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4184}
     - Class: 114
-      Script: {instanceID: 4978}
+      Script: {instanceID: 4288}
     - Class: 114
-      Script: {instanceID: 5106}
+      Script: {instanceID: 4484}
     - Class: 114
-      Script: {instanceID: 5184}
+      Script: {instanceID: 4560}
     - Class: 114
-      Script: {instanceID: 5328}
+      Script: {instanceID: 4954}
     - Class: 114
-      Script: {instanceID: 5332}
+      Script: {instanceID: 4984}
     - Class: 114
-      Script: {instanceID: 5952}
+      Script: {instanceID: 5112}
     - Class: 114
-      Script: {instanceID: 6042}
+      Script: {instanceID: 5190}
     - Class: 114
-      Script: {instanceID: 6106}
+      Script: {instanceID: 5334}
     - Class: 114
-      Script: {instanceID: 6450}
+      Script: {instanceID: 5338}
     - Class: 114
-      Script: {instanceID: 8236}
+      Script: {instanceID: 5958}
+    - Class: 114
+      Script: {instanceID: 6048}
+    - Class: 114
+      Script: {instanceID: 6112}
+    - Class: 114
+      Script: {instanceID: 6456}
+    - Class: 114
+      Script: {instanceID: 7350}
+    - Class: 114
+      Script: {instanceID: 8244}
+    - Class: 114
+      Script: {instanceID: 8316}
+    - Class: 114
+      Script: {instanceID: 29154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -216,6 +245,12 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -228,19 +263,13 @@ ScriptsOnlyBuild:
     className: PanelRaycaster
   - hash:
       serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollbarValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 1f4ad85542a95047c938be198bbf9433
+      Hash: 8d9bff7665fcad4fe8c952da9063cdd3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProducerSoldier
@@ -282,6 +311,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 9224b95708faf8a7cab81c1e4fd4dac5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ThrowerSoldier
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -318,13 +353,13 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c3e17ab5065164ff5f1a7f0e1078feb8
+      Hash: 917421a28721c6a2d2b7af165998d55b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MeleeSoldier
   - hash:
       serializedVersion: 2
-      Hash: c31f74fe7b31a12566ede1eec03d4933
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Projectile
@@ -426,7 +461,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: e5bfa34c43ffb7df144d214c34aa73a3
+      Hash: 403e3263daefe82c313e5f9cd4d2098b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Commander
@@ -528,7 +563,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 5ee07682c8b7987b2332de9e735e583b
+      Hash: a4f563d9eb43f7c72f994ebf768edd44
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GetHitParticle
@@ -538,6 +573,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnControllerColliderHitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 2aa6ee59314e3939e2ecd5417788b7e5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShootManager
   - hash:
       serializedVersion: 2
       Hash: 27ec3360f0c0a6803ba71cc3106480b8
@@ -604,6 +645,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 5b96a4a51f8bf0cd456735d1b60fb4ce
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LocalCanvas
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -678,7 +725,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 35c6e2702859c7598e19059d0b32180b
+      Hash: 509ac57434c4ccd783c254a0a2fab8dc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Soldier
@@ -708,7 +755,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: b32685fca0c56d0a37c6a2295dfc6ba6
+      Hash: 91f958fbe6864e2be10ece5dfdefe8ba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GridBox
@@ -846,7 +893,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: eb4214378a6af5a4073aec662c699392
+      Hash: 9bd1afc999115151e9d968c6fb4afcc5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MeleeEnemy
@@ -996,6 +1043,12 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 883a96938509346bf5c2d04b45dc063b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ThrowerEnemy
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1092,12 +1145,24 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: 1a2fbed54db8102cfb7de4731fef9c91
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraMovement
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: cff68cef1933b2c420daaf15f5d0eb86
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BarricadeSoldier
   platform: 19
   scenePathNames:
   - Assets/Scenes/GameScene.unity
-  playerPath: C:/Users/rknyp/Desktop/Leaf/GameBuilds/GirlsVersusBoysPC/Girls Versus
-    Boys.exe
+  playerPath: C:/Users/rknyp/Desktop/Leaf/GameBuilds/GirlsVersusBoysPC_V0.2/Girls
+    Versus Boys.exe

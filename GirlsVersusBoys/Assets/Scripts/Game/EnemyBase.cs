@@ -42,12 +42,12 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public void Start()
+    public void StartGenerate()
     {
         generate = true;
     }
 
-    public void Stop()
+    public void StopGenerate()
     {
         generate = false;
     }

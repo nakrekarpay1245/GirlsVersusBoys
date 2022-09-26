@@ -6,24 +6,25 @@ using DG.Tweening;
 public class Commander : MonoBehaviour
 {
     [Header("CAMERA")]
-    [SerializeField]
     private Camera mainCamera;
 
     [Header("ATTACK")]
-    [SerializeField]
     private Soldier deployingSoldier;
 
-    [SerializeField]
     private Soldier selectedSoldier;
 
     private Vector3 mousePosition = Vector3.zero;
 
-    public List<GridBox> gridBoxes;
-    public GridBox selectedGridBox;
+    [SerializeField]
+    private List<GridBox> gridBoxes;
+    [SerializeField]
+    private GridBox selectedGridBox;
 
-    public GameObject grid;
+    [SerializeField]
+    private GameObject grid;
 
-    public LayerMask commanderRaycastLayer;
+    [SerializeField]
+    private LayerMask commanderRaycastLayer;
 
     void Start()
     {

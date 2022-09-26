@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ThrowerSoldier : Soldier
 {
-
     [Header("HEALTH")]
     [SerializeField]
     private string deadAnim;
@@ -25,19 +24,15 @@ public class ThrowerSoldier : Soldier
     [SerializeField]
     private string attackAnim;
 
-    [SerializeField]
     private AttackArea attackArea;
 
-    [SerializeField]
-    private List<Unit> oppositeUnitsInAttackArea;
+    public List<Unit> oppositeUnitsInAttackArea;
 
-    [SerializeField]
     private Animator animator;
 
-    [SerializeField]
     private Collider collider;
 
-    private void Awake()
+    private void Start()
     {
         animator = GetComponentInChildren<Animator>();
         collider = GetComponentInChildren<Collider>();
@@ -173,17 +168,10 @@ public class ThrowerSoldier : Soldier
             // Debug.Log("Some enemy hit me");
             DecreaseHealth();
         }
-
-        if (other.gameObject.CompareTag("Projectile"))
+        if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            Projectile projectile = other.GetComponent<Projectile>();
-
-            if (projectile.isEnemy)
-            {
-                // Debug.Log("Some enemy throw a projectile to me");
-                DecreaseHealth();
-                Destroy(projectile.gameObject);
-            }
+            // Debug.Log("Some enemy throw a projectile to me");
+            DecreaseHealth();
         }
     }
 }

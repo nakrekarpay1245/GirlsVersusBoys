@@ -21,10 +21,8 @@ public class ProducerSoldier : Soldier
     [SerializeField]
     private ParticleSystem produceParticle;
 
-    [SerializeField]
     private Animator animator;
 
-    [SerializeField]
     private Collider collider;
 
     private void Awake()
@@ -99,8 +97,6 @@ public class ProducerSoldier : Soldier
             }
         }
     }
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("EnemyAttackBox"))
@@ -108,14 +104,10 @@ public class ProducerSoldier : Soldier
             // Debug.Log("Some enemy hit me");
             DecreaseHealth();
         }
-        if (other.gameObject.CompareTag("Projectile"))
+        if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            Projectile projectile = other.GetComponent<Projectile>();
-            if (projectile.isEnemy)
-            {
-                // Debug.Log("Some enemy throw a projectile to me");
-                DecreaseHealth();
-            }
+            // Debug.Log("Some enemy throw a projectile to me");
+            DecreaseHealth();
         }
     }
 

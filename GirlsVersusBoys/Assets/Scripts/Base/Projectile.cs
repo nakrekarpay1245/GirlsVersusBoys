@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public bool isSoldier;
-    public bool isEnemy;
-
     [SerializeField]
     private float speed = 1;
 
     private void Awake()
     {
+        // Debug.Log("projectile generated");
         Destroy(gameObject, 10);
     }
 
@@ -24,6 +22,12 @@ public class Projectile : MonoBehaviour
     {
         // Debug.Log("enter ");
         if (other.gameObject.CompareTag("Enemy"))
+        {
+            // Debug.Log("enter enemy");
+            Destroy(gameObject);
+        }
+        Debug.Log("enter ");
+        if (other.gameObject.CompareTag("Soldier"))
         {
             // Debug.Log("enter enemy");
             Destroy(gameObject);

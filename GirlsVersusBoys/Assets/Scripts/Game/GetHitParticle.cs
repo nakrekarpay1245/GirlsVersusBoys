@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GetHitParticle : MonoBehaviour
 {
-    [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
     private List<AudioClip> audioClipList;

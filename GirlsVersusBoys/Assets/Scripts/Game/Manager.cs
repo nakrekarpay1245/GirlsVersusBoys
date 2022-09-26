@@ -8,8 +8,7 @@ using DG.Tweening;
 public class Manager : MonoBehaviour
 {
     [Header("ENEMY")]
-    [SerializeField]
-    private List<Enemy> enemyList;
+    public List<Enemy> enemyList;
 
     [SerializeField]
     private float enemyGenerateTimeLimit;
@@ -76,7 +75,7 @@ public class Manager : MonoBehaviour
                 FinishLevel(true);
             }
 
-            EnemyBase.instance.Stop();
+            EnemyBase.instance.StopGenerate();
         }
         #endregion
 
@@ -132,7 +131,7 @@ public class Manager : MonoBehaviour
         moneyDisplay.transform.DOScale(Vector3.one, 1);
         healthDisplay.transform.DOScale(Vector3.one, 1);
         yield return new WaitForSeconds(1);
-        EnemyBase.instance.Start();
+        EnemyBase.instance.StartGenerate();
     }
     #endregion
 

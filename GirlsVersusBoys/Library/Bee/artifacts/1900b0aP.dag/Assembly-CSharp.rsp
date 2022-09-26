@@ -307,6 +307,7 @@
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/BarricadeSoldier.cs"
 "Assets/Scripts/Base/AttackArea.cs"
 "Assets/Scripts/Base/AttackBox.cs"
 "Assets/Scripts/Base/AttackManager.cs"
@@ -319,11 +320,16 @@
 "Assets/Scripts/Base/Soldier.cs"
 "Assets/Scripts/Base/Unit.cs"
 "Assets/Scripts/Base/UnitState.cs"
+"Assets/Scripts/CameraMovement.cs"
 "Assets/Scripts/Game/EnemyBase.cs"
 "Assets/Scripts/Game/GetHitParticle.cs"
 "Assets/Scripts/Game/GridBox.cs"
 "Assets/Scripts/Game/Manager.cs"
 "Assets/Scripts/Game/PlayerBase.cs"
+"Assets/Scripts/LocalCanvas.cs"
+"Assets/Scripts/ShootManager.cs"
+"Assets/Scripts/ThrowerEnemy.cs"
+"Assets/Scripts/ThrowerSoldier.cs"
 -langversion:9.0
 
 /deterministic
