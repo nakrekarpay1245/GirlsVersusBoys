@@ -30,6 +30,9 @@ public class Manager : MonoBehaviour
     private GameObject soldierPanel;
 
     [SerializeField]
+    private GameObject destroySoldierButton;
+
+    [SerializeField]
     private GameObject levelEndPanel;
     [SerializeField]
     private GameObject levelFailedText;
@@ -92,6 +95,7 @@ public class Manager : MonoBehaviour
         soldierPanel.transform.DOScale(Vector3.zero, 1);
         moneyDisplay.transform.DOScale(Vector3.zero, 1);
         healthDisplay.transform.DOScale(Vector3.zero, 1);
+        destroySoldierButton.transform.DOScale(Vector3.zero, 1);
 
         levelEndPanel.transform.DOScale(Vector3.one, 1);
 
@@ -130,6 +134,7 @@ public class Manager : MonoBehaviour
         soldierPanel.transform.DOScale(Vector3.one, 1);
         moneyDisplay.transform.DOScale(Vector3.one, 1);
         healthDisplay.transform.DOScale(Vector3.one, 1);
+        destroySoldierButton.transform.DOScale(Vector3.one, 1);
         yield return new WaitForSeconds(1);
         EnemyBase.instance.StartGenerate();
     }

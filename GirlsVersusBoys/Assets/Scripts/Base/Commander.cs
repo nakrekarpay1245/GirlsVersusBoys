@@ -120,4 +120,24 @@ public class Commander : MonoBehaviour
         }
     }
 
+    public void DestroyDeployingSoldier()
+    {
+        if (deployingSoldier)
+        {
+            Manager.instance.IncreaseMoney(deployingSoldier.price);
+            Destroy(deployingSoldier.gameObject);
+
+            grid.transform.DOScale(Vector3.zero, 0.05f);
+
+            CameraMovement.instance.Move();
+
+            if (selectedGridBox)
+            {
+                selectedGridBox.UnDeployed();
+            }
+
+            deployingSoldier = null;
+            selectedGridBox = null;
+        }
+    }
 }
